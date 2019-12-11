@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class NetworkHelper{
     private var session: URLSession
@@ -49,5 +50,18 @@ class NetworkHelper{
             completion(.success(data))
         }
         dataTask.resume()
+    }
+    
+    func getImage(using urlString: String, completion: @escaping (Result<UIImage,NetworkError>) -> ()){
+        NetworkHelper.shared.getData(using: urlString) { (result) in
+            switch result{
+            case .failure(let netError):
+                completion(.failure(netError))
+            case .success(let data):
+                if let image = UIImage(data: data){
+                    completion(.success(image))
+                }
+            }
+        }
     }
 }
