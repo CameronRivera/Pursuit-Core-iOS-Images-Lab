@@ -19,21 +19,21 @@ class PokemonCardTableViewCell: UITableViewCell {
         cardImage.image = nil
     }
     
-    func cellSetUp(with urlString: String){
+    func cellSetUp(with card: PokemonCard){
         
-        cellImageURL = urlString
+        cellImageURL = card.imageUrlHiRes
         
-        NetworkHelper.shared.getImage(using: urlString) { result in
+        cardImage.getImage(using: cellImageURL) { [weak self] result in
             switch result{
             case .failure(let netError):
-                print("netError: \(netError)")
+                print("Encountered Error while setting up pokemon card cell: \(netError)")
                 DispatchQueue.main.async{
-                    self.cardImage.image = UIImage(systemName: "circle")
+                    self?.cardImage.image = UIImage(systemName: "circle")
                 }
             case .success(let image):
                 DispatchQueue.main.async{
-                    if self.cellImageURL == urlString {
-                        self.cardImage.image = image
+                    if self?.cellImageURL == card.imageUrlHiRes {
+                        self?.cardImage.image = image
                     }
                 }
             }

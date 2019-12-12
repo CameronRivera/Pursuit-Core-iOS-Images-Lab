@@ -120,57 +120,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="llk-nk-BxJ">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="QEi-FA-tnJ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Sj-ws-lOY">
                                 <rect key="frame" x="0.0" y="144" width="414" height="669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pokemonCell" rowHeight="271" id="AgJ-dM-eqM" customClass="PokemonCardTableViewCell" customModule="ImagesLab" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="271"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pokemonCell" rowHeight="199" id="lD9-Pa-qXi" customClass="PokemonCardTableViewCell" customModule="ImagesLab" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="199"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AgJ-dM-eqM" id="DPC-t5-NEr">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="271"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lD9-Pa-qXi" id="PB1-LX-Vht">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="199"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F6g-lH-zMO">
-                                                    <rect key="frame" x="82.5" y="11" width="249" height="249"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v3U-oV-gWg">
+                                                    <rect key="frame" x="118.5" y="11" width="177" height="177"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="F6g-lH-zMO" secondAttribute="height" multiplier="1:1" id="sYo-By-Nd0"/>
+                                                        <constraint firstAttribute="width" secondItem="v3U-oV-gWg" secondAttribute="height" multiplier="1:1" id="A6M-Zq-DMY"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="F6g-lH-zMO" firstAttribute="centerX" secondItem="DPC-t5-NEr" secondAttribute="centerX" id="66K-yY-4pi"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="F6g-lH-zMO" secondAttribute="bottom" id="Hvv-dU-LzG"/>
-                                                <constraint firstItem="F6g-lH-zMO" firstAttribute="top" secondItem="DPC-t5-NEr" secondAttribute="topMargin" id="uAL-3p-hcm"/>
+                                                <constraint firstItem="v3U-oV-gWg" firstAttribute="centerY" secondItem="PB1-LX-Vht" secondAttribute="centerY" id="2jC-rf-KXz"/>
+                                                <constraint firstItem="v3U-oV-gWg" firstAttribute="centerX" secondItem="PB1-LX-Vht" secondAttribute="centerX" id="33K-Hc-Mzf"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="v3U-oV-gWg" secondAttribute="bottom" id="eIw-7h-jbE"/>
+                                                <constraint firstItem="v3U-oV-gWg" firstAttribute="top" secondItem="PB1-LX-Vht" secondAttribute="topMargin" id="p2v-pb-WfD"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="cardImage" destination="F6g-lH-zMO" id="UOm-72-Q3G"/>
+                                            <outlet property="cardImage" destination="v3U-oV-gWg" id="CZF-sv-G0X"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="4OT-hB-ctR">
-                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="4OT-hB-ctR" firstAttribute="leading" secondItem="eFn-Jv-eRY" secondAttribute="leading" id="Eyk-O2-zx0"/>
-                            <constraint firstItem="eFn-Jv-eRY" firstAttribute="trailing" secondItem="llk-nk-BxJ" secondAttribute="trailing" id="Kmk-bz-swU"/>
-                            <constraint firstItem="eFn-Jv-eRY" firstAttribute="bottom" secondItem="llk-nk-BxJ" secondAttribute="bottom" id="UXT-JV-c7p"/>
-                            <constraint firstItem="llk-nk-BxJ" firstAttribute="top" secondItem="4OT-hB-ctR" secondAttribute="bottom" id="XHn-6b-fS8"/>
-                            <constraint firstItem="4OT-hB-ctR" firstAttribute="trailing" secondItem="eFn-Jv-eRY" secondAttribute="trailing" id="gKo-H8-wgV"/>
-                            <constraint firstItem="4OT-hB-ctR" firstAttribute="top" secondItem="eFn-Jv-eRY" secondAttribute="top" id="vj5-Hq-h7U"/>
-                            <constraint firstItem="llk-nk-BxJ" firstAttribute="leading" secondItem="eFn-Jv-eRY" secondAttribute="leading" id="wgW-21-6eL"/>
+                            <constraint firstItem="eFn-Jv-eRY" firstAttribute="trailing" secondItem="6Sj-ws-lOY" secondAttribute="trailing" id="9nv-g9-wss"/>
+                            <constraint firstItem="6Sj-ws-lOY" firstAttribute="top" secondItem="QEi-FA-tnJ" secondAttribute="bottom" symbolic="YES" id="IKz-O1-LWM"/>
+                            <constraint firstItem="QEi-FA-tnJ" firstAttribute="top" secondItem="eFn-Jv-eRY" secondAttribute="top" id="NND-aP-ac1"/>
+                            <constraint firstItem="6Sj-ws-lOY" firstAttribute="leading" secondItem="eFn-Jv-eRY" secondAttribute="leading" id="YyV-t2-EF9"/>
+                            <constraint firstItem="QEi-FA-tnJ" firstAttribute="leading" secondItem="eFn-Jv-eRY" secondAttribute="leading" id="bgS-0E-gSx"/>
+                            <constraint firstItem="eFn-Jv-eRY" firstAttribute="bottom" secondItem="6Sj-ws-lOY" secondAttribute="bottom" id="ghz-p8-24r"/>
+                            <constraint firstItem="QEi-FA-tnJ" firstAttribute="trailing" secondItem="eFn-Jv-eRY" secondAttribute="trailing" id="yrf-Oy-m0X"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eFn-Jv-eRY"/>
                     </view>
                     <navigationItem key="navigationItem" id="4SI-a1-Vxh"/>
                     <connections>
-                        <outlet property="searchBar" destination="4OT-hB-ctR" id="VIc-bv-Ybx"/>
-                        <outlet property="tableView" destination="llk-nk-BxJ" id="wjy-hv-bSf"/>
+                        <outlet property="searchBar" destination="QEi-FA-tnJ" id="P2B-s1-mL2"/>
+                        <outlet property="tableView" destination="6Sj-ws-lOY" id="tYh-0M-bWh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GCL-4u-9rW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

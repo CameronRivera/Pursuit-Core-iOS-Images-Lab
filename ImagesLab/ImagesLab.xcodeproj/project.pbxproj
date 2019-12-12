@@ -28,6 +28,7 @@
 		C48E034823A107C50087ACDC /* RandomPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E034723A107C50087ACDC /* RandomPersonViewController.swift */; };
 		C48E034A23A108350087ACDC /* RandomPeron.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E034923A108350087ACDC /* RandomPeron.swift */; };
 		C48E034D23A10D0F0087ACDC /* RandomPersonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E034C23A10D0F0087ACDC /* RandomPersonAPI.swift */; };
+		C4D7BD1C23A2EA42002767F1 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D7BD1B23A2EA42002767F1 /* UIImageView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		C48E034723A107C50087ACDC /* RandomPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPersonViewController.swift; sourceTree = "<group>"; };
 		C48E034923A108350087ACDC /* RandomPeron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPeron.swift; sourceTree = "<group>"; };
 		C48E034C23A10D0F0087ACDC /* RandomPersonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPersonAPI.swift; sourceTree = "<group>"; };
+		C4D7BD1B23A2EA42002767F1 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		C444965F239EE3740063702B /* ImagesLab */ = {
 			isa = PBXGroup;
 			children = (
+				C4D7BD1A23A2EA2B002767F1 /* Extensions */,
 				C4514EAA23A1831B00125ACB /* NetworkHelper */,
 				C48E034B23A10CF90087ACDC /* APIs */,
 				C48E034623A107520087ACDC /* Models */,
@@ -187,6 +190,14 @@
 				C48E034C23A10D0F0087ACDC /* RandomPersonAPI.swift */,
 			);
 			path = APIs;
+			sourceTree = "<group>";
+		};
+		C4D7BD1A23A2EA2B002767F1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C4D7BD1B23A2EA42002767F1 /* UIImageView+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +306,7 @@
 				C46A139123A040D600D111A1 /* DetailedPokemonCardViewController.swift in Sources */,
 				C48E034523A106130087ACDC /* RandomPersonTableViewCell.swift in Sources */,
 				C48E034823A107C50087ACDC /* RandomPersonViewController.swift in Sources */,
+				C4D7BD1C23A2EA42002767F1 /* UIImageView+Extensions.swift in Sources */,
 				C4449683239EE3E50063702B /* NetworkHelper.swift in Sources */,
 				C4449665239EE3740063702B /* XKCDComicViewController.swift in Sources */,
 				C4449661239EE3740063702B /* AppDelegate.swift in Sources */,
@@ -469,6 +481,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6D2PJ2UC46;
 				INFOPLIST_FILE = ImagesLab/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -487,6 +500,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6D2PJ2UC46;
 				INFOPLIST_FILE = ImagesLab/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

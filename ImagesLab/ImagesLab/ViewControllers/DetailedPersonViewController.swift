@@ -29,18 +29,18 @@ class DetailedPersonViewController: UIViewController {
             return
         }
         
-        NetworkHelper.shared.getImage(using: human.picture.large) { Result in
+        imageView.getImage(using: human.picture.large) { [weak self] Result in
             switch Result{
             case .failure(let netError):
                 print("Encountered Error: \(netError)")
             case .success(let image):
                 DispatchQueue.main.async{
-                    self.imageView.image = image
-                    self.nameLabel.text = "Name: \(human.name.first) \(human.name.last)"
-                    self.ageLabel.text = "Age: \(human.dob.age)"
-                    self.cellNumberLabel.text = "Cell Number: \(human.cell)"
-                    self.homePhoneLabel.text = "Home Number: \(human.phone)"
-                    self.locationLabel.text = "Address: \(human.location.street.number) \(human.location.street.name) \(human.location.city), \(human.location.state) \(human.location.country)"
+                    self?.imageView.image = image
+                    self?.nameLabel.text = "Name: \(human.name.first) \(human.name.last)"
+                    self?.ageLabel.text = "Age: \(human.dob.age)"
+                    self?.cellNumberLabel.text = "Cell Number: \(human.cell)"
+                    self?.homePhoneLabel.text = "Home Number: \(human.phone)"
+                    self?.locationLabel.text = "Address: \(human.location.street.number) \(human.location.street.name), \(human.location.city) \(human.location.state), \(human.location.country)"
                 }
             }
         }

@@ -21,16 +21,16 @@ class RandomPersonTableViewCell: UITableViewCell {
     }
     
     func setUpCell(using person: RandomPerson){
-        RandomPersonAPI.getProfileImage(from: person.picture.thumbnail) { Result in
+        RandomPersonAPI.getProfileImage(from: person.picture.thumbnail) { [weak self] Result in
             switch Result{
             case .failure(let networkError):
                 print("Encountered Error: \(networkError)")
             case .success(let image):
                 DispatchQueue.main.async{
-                    self.profilePicture.image = image
-                    self.nameLabel.text = "Name: \(person.name.first) \(person.name.last)"
-                    self.ageLabel.text = "Age: \(person.dob.age)"
-                    self.cellNumberLabel.text = "Phone Number: \(person.cell)"
+                    self?.profilePicture.image = image
+                    self?.nameLabel.text = "Name: \(person.name.first) \(person.name.last)"
+                    self?.ageLabel.text = "Age: \(person.dob.age)"
+                    self?.cellNumberLabel.text = "Phone Number: \(person.cell)"
                 }
             }
         }

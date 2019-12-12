@@ -14,8 +14,8 @@ struct Deck: Decodable{
 
 struct PokemonCard: Decodable{
     var name: String
-    var types: [String]
-    var weaknesses: [Weakness]
+    var types: [String]?
+    var weaknesses: [Weakness]?
     var set: String
     var imageUrl: String
     var imageUrlHiRes: String

@@ -23,12 +23,12 @@ class PokemonViewController: UIViewController{
     
     var userQuery = ""{
         didSet{
-            PokemonCardAPI.getPokemonCards(using: "https://api.pokemontcg.io/v1/cards?name=\(userQuery)") { result in
+            PokemonCardAPI.getPokemonCards(using: "https://api.pokemontcg.io/v1/cards?name=\(userQuery)") {[weak self] result in
                 switch result{
                 case .failure(let netError):
                     print("Encountered Error: \(netError)")
                 case .success(let deck):
-                    self.pokemonCards = deck
+                    self?.pokemonCards = deck
                 }
             }
         }
@@ -53,15 +53,16 @@ extension PokemonViewController: UITableViewDataSource{
             return UITableViewCell()
         }
         
-        xCell.cellSetUp(with: pokemonCards[indexPath.row].imageUrlHiRes)
-        
+        xCell.cellSetUp(with: pokemonCards[indexPath.row])
         return xCell
     }
 }
 
 extension PokemonViewController: UITableViewDelegate{
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let newStoryboard = UIStoryboard(name: "SecondStoryboard", bundle: nil)
         guard let detailedPokeVC = newStoryboard.instantiateViewController(identifier: "detailedPokeVC") as? DetailedPokemonCardViewController else {
